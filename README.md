@@ -6,10 +6,9 @@ A vectorized Python implementation of the Lalonde-Matthews parametric sky model 
 
 The panoramas are linear RGB, HDR, and represented in the latitude-longitude format. The sun and sky panoramas are rendered separately and can be directly added afterward. Can be used to render parametric skies at arbitrary resolutions and train machine learning models for lighting-related tasks.
 
-**License:** Creative Commons Attribution Non-Commercial 4.0 International  (CC BY-NC 4.0)
-
-For technical questions, feel free to contact Lucas Valença (*lucas@valenca.io*).
-For other inquiries, please contact Prof. Jean-François Lalonde (jflalonde@gel.ulaval.ca).
+- **License:** Creative Commons Attribution Non-Commercial 4.0 International  (CC BY-NC 4.0)
+- **For technical questions**, feel free to contact Lucas Valença (*lucas@valenca.io*).
+- **For other inquiries**, please contact Prof. Jean-François Lalonde (jflalonde@gel.ulaval.ca).
 
 If you use this code in your publication, feel free to cite it with the following BibTeX:
 
@@ -31,6 +30,12 @@ As well as the [original Lalonde-Matthews paper](https://ieeexplore.ieee.org/abs
       organization={IEEE}
     }
 
+## Dependencies
+- NumPy
+- PyTorch
+- [Skylibs](https://github.com/soravux/skylibs)
+- Matplotlib (for visualizing the example code only)
+
 ## Usage
 A full working example can be found in `example.py`. Complete documentation is available at `lm_model.py`.
 
@@ -49,9 +54,3 @@ All parameters can be passed as individual float values, except for `wsun` and `
 
 ### Multiple Panoramas in Parallel
 The same logic applies as to generating individual panoramas, except scalars can be passed as lists, 1D NumPy arrays, or PyTorch Tensors with `N` elements. For the RGB triplets `wsun` and `wsky`, the format should be `Nx3` matrices. The output panoramas will be shaped  `(N, 3, H, W)` and `(N, H, W, 3)` for PyTorch and NumPy, respectively.
-
-## Dependencies
-- NumPy
-- PyTorch
-- [Skylibs](https://github.com/soravux/skylibs)
-- Matplotlib (for visualizing the example code only)
